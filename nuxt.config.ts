@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Abriss-Kalender 2025',
+      title: 'Rein`s Abriss-Kalender 2026',
       htmlAttrs: {
         lang: 'de'
       },
