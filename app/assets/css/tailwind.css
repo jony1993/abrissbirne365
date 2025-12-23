@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Abriss-Animation */
+@keyframes tearOff {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) rotate(-5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes tearOffLeft {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) translateX(-50px) rotate(15deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(-200px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.tear-off {
+  animation: tearOff 0.8s ease-in-out forwards;
+}
+
+.tear-off-left {
+  animation: tearOffLeft 0.8s ease-in-out forwards;
+}
+
+/* Papier-Effekt */
+.paper-sheet {
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.12),
+    0 1px 2px rgba(0,0,0,0.24),
+    inset 0 -2px 10px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.paper-sheet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    #e5e7eb 10px,
+    #e5e7eb 12px
+  );
+  border-bottom: 2px dashed #d1d5db;
+  z-index: 10;
+}
+
+/* Hover-Effekt für Abreißen */
+.tear-handle {
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.tear-handle:hover {
+  transform: translateY(-5px);
+}
+
+.tear-handle:active {
+  cursor: grabbing;
+  transform: translateY(-10px);
+}
+
+/* Nächstes Blatt darunter */
+.next-sheet {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  z-index: -1;
+  transform: scale(0.98);
+}
+
+/* Kalenderblatt Design */
+.calendar-day {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.day-number-large {
+  font-size: 12rem;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 640px) {
+  .day-number-large {
+    font-size: 8rem;
+  }
+}
