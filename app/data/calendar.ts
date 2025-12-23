@@ -1,5 +1,6 @@
 // Calendar data with descriptions for each day
 // Add your descriptions here - key is day number (1-365)
+// Day 1 is the cover page with index.png
 export interface DayData {
   description: string
   title?: string
@@ -7,8 +8,8 @@ export interface DayData {
 
 export const calendarData: Record<number, DayData> = {
   1: {
-    title: 'Neujahr',
-    description: 'Ein neues Jahr beginnt mit diesem besonderen Abriss.'
+    title: 'Abriss-Kalender 2026',
+    description: '365 Tage · 365 Häuser · Eine Reise durch das Jahr'
   },
   2: {
     description: 'Tag 2 - Beschreibung hier hinzufügen.'
@@ -16,12 +17,6 @@ export const calendarData: Record<number, DayData> = {
   3: {
     description: 'Tag 3 - Beschreibung hier hinzufügen.'
   },
-  // Add more days as needed...
-  // Example:
-  // 42: {
-  //   title: 'Besonderer Tag',
-  //   description: 'Eine interessante Geschichte zu diesem Haus.'
-  // },
 }
 
 // Helper function to get day data with fallback

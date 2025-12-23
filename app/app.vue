@@ -1,142 +1,105 @@
 <template>
-  <div class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="flex items-center justify-between border-b border-gray-700 px-6 py-4 bg-gray-800">
-      <h1 class="text-base font-semibold text-white">
-        Abriss-Kalender <time>{{ currentYear }}</time>
-      </h1>
-      <div class="flex items-center gap-4">
-        <div class="relative flex items-center rounded-md bg-gray-700 shadow-sm border border-gray-600">
-          <button 
-            type="button" 
-            class="flex h-9 w-12 items-center justify-center rounded-l-md text-gray-300 hover:text-white hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed"
-            :disabled="currentDay === 1"
-            @click="prevDay"
-          >
-            <span class="sr-only">Vorheriger Tag</span>
-            <svg viewBox="0 0 20 20" fill="currentColor" class="size-5">
-              <path d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" fill-rule="evenodd" />
-            </svg>
-          </button>
-          <button 
-            type="button" 
-            class="hidden px-3.5 text-sm font-semibold text-white hover:bg-gray-600 md:block"
-            @click="goToToday"
-          >
-            Heute
-          </button>
-          <span class="relative -mx-px h-5 w-px bg-gray-600 md:hidden"></span>
-          <button 
-            type="button" 
-            class="flex h-9 w-12 items-center justify-center rounded-r-md text-gray-300 hover:text-white hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed"
-            :disabled="currentDay === maxDay"
-            @click="nextDay"
-          >
-            <span class="sr-only">Nächster Tag</span>
-            <svg viewBox="0 0 20 20" fill="currentColor" class="size-5">
-              <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+  <div class="bg-white min-h-screen">
+    <!-- Preview Badge -->
+    <div v-if="isPreview" class="text-center py-2 bg-yellow-500">
+      <span class="text-white text-xs font-bold uppercase">Preview Mode</span>
+    </div>
 
     <!-- Main Content -->
-    <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div class="max-w-xl mx-auto px-4 py-8">
       
       <!-- Kalenderblatt Container -->
-      <div class="relative" style="min-height: 700px;">
+      <div class="relative">
         
         <!-- Nächstes Blatt (Bild darunter) -->
         <div 
           v-if="currentDay < maxDay"
           class="next-sheet bg-white rounded-lg shadow-lg overflow-hidden"
         >
-          <img 
-            :src="`/images/${currentDay + 1}.png`" 
-            :alt="`Bild des Tages ${currentDay + 1}`" 
-            class="w-full h-full object-cover"
-            style="height: 600px;"
-            @error="handleImageError"
-          >
+          <div class="relative w-full" style="height: 400px;">
+            <img 
+              :src="`/images/${currentDay + 1}.png`" 
+              :alt="`Bild des Tages ${currentDay + 1}`" 
+              class="w-full h-full object-cover"
+              @error="handleImageError"
+            >
+          </div>
         </div>
 
-        <!-- Aktuelles Kalenderblatt (Deckel) -->
-        <div 
-          ref="currentSheet"
-          class="relative bg-white rounded-lg shadow-2xl overflow-hidden paper-sheet"
-          :class="tearAnimation"
-        >
+        <!-- Card Container -->
+        <div class="relative bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200">
           
-          <!-- Abreißbare Perforation (Drag-Bereich) -->
+          <!-- Fixed Header with Title (NOT part of animation) -->
+          <div class="bg-white px-4 py-4 shadow-md relative z-10">
+            <h1 class="text-[18px] md:text-3xl font-black tracking-tight text-gray-900 text-center">
+              <span>REIN's</span> ABRISSKALENDER 2026
+            </h1>
+          </div>
+          
+          <!-- Dashed tear line (full width) -->
+          <div class="border-b-2 border-dashed border-gray-300 w-full"></div>
+
+          <!-- Animated tear-off section -->
           <div 
-            class="tear-handle absolute top-0 left-0 right-0 h-20 z-20 flex items-center justify-center"
-            @mousedown="startDrag"
-            @touchstart="startDragTouch"
+            ref="currentSheet"
+            :class="tearAnimation"
           >
-            <div class="text-gray-400 text-xs flex flex-col items-center gap-1 pointer-events-none">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-              </svg>
-              <span>Zum Abreißen ziehen</span>
+            <!-- Image with Stamp -->
+            <div class="relative">
+              <!-- Cover Image -->
+              <template v-if="currentDay === 1">
+                <img 
+                  src="/images/index.png" 
+                  alt="Abriss-Kalender 2026 Cover" 
+                  class="w-full h-auto"
+                >
+              </template>
+              <!-- Regular Day Image -->
+              <template v-else>
+                <img 
+                  :src="`/images/${currentDay}.png`" 
+                  :alt="`Bild des Tages ${currentDay}`" 
+                  class="w-full h-auto"
+                  @error="handleImageError"
+                >
+                <!-- Rubber Stamp Overlay -->
+                <div class="absolute top-4 left-4 transform -rotate-12 pointer-events-none">
+                  <div class="rubber-stamp">
+                    <div class="stamp-inner">
+                      <span class="stamp-text-small">ABREISSEN AM</span>
+                      <span class="stamp-text-large">{{ getStampDate(currentDay) }}</span>
+                    </div>
+                  </div>
+                </div>
+              </template>
             </div>
-          </div>
 
-          <!-- Kalenderblatt Design -->
-          <div class="calendar-day pt-20">
-            <!-- Großer Tag -->
-            <div class="day-number-large">{{ currentDay }}</div>
-            
-            <!-- Datum -->
-            <div class="text-center mt-8 px-4">
-              <div class="text-2xl font-bold mb-2">{{ formattedDate }}</div>
-              <div class="text-lg opacity-80">Tag {{ currentDay }} von {{ maxDay }}</div>
+            <!-- Bottom Area -->
+            <div class="p-6 bg-white border-t border-gray-100">
+              <!-- Date Display -->
+              <div class="text-center mb-6">
+                <p v-if="dayData.description" class="text-gray-600 text-sm mt-2">{{ dayData.description }}</p>
             </div>
 
-            <!-- Beschreibung -->
-            <div v-if="dayData.title || dayData.description" class="mt-6 px-6 text-center max-w-md">
-              <div v-if="dayData.title" class="text-xl font-bold mb-2">{{ dayData.title }}</div>
-              <p v-if="dayData.description" class="text-gray-300 text-sm">{{ dayData.description }}</p>
-            </div>
-          </div>
-
-          <!-- Unterer Bereich mit Buttons -->
-          <div class="p-6 bg-gray-800">
             <!-- Abreiß-Button -->
             <button 
-              class="w-full py-4 bg-gradient-to-r from-gray-700 to-gray-600 text-white rounded-lg font-bold text-lg hover:from-gray-600 hover:to-gray-500 transition-all transform hover:scale-105 active:scale-95 shadow-lg disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+              class="w-full py-4 bg-gray-700 text-white rounded-lg font-bold text-lg hover:bg-gray-800 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
               :disabled="currentDay >= maxDay"
               @click="tearOffSheet('left')"
             >
-              📅 Tag abreißen
+              {{ currentDay === 1 ? '🎉 Kalender starten' : '📅 Tag abreißen' }}
             </button>
 
-            <!-- Navigation -->
-            <div class="mt-4 flex items-center gap-2">
+            <!-- Back Button (hidden on index) -->
+            <div v-if="currentDay > 1" class="mt-4 text-center">
               <button 
-                class="flex-1 py-2 bg-gray-700 border-2 border-gray-600 text-white rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                :disabled="currentDay === 1"
+                class="text-gray-500 hover:text-gray-900 transition-colors text-sm"
                 @click="prevDay"
               >
                 ← Zurück
               </button>
-              <input 
-                v-model.number="dayInputValue"
-                type="number" 
-                min="1" 
-                :max="maxDay"
-                class="w-20 px-3 py-2 bg-gray-700 border-2 border-gray-600 text-white rounded-lg text-center focus:ring-2 focus:ring-gray-500 focus:border-transparent outline-none"
-                @change="goToDay"
-                @keypress.enter="($event.target as HTMLInputElement).blur()"
-              >
-              <button 
-                class="flex-1 py-2 bg-gray-700 border-2 border-gray-600 text-white rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                :disabled="currentDay === maxDay"
-                @click="nextDay"
-              >
-                Vor →
-              </button>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -154,27 +117,22 @@ import { getDayData } from '~/data/calendar'
 
 const maxDay = 365
 const calendarYear = 2026
+const STORAGE_KEY = 'abrisskalender_position'
 
-// Calculate day of year for 2026
-function getDayOfYear2026(): number {
-  const now = new Date()
-  const start = new Date(2026, 0, 1)
-  
-  // If we're before 2026, show day 0 (cover)
-  if (now < start) return 0
-  
-  const diff = now.getTime() - start.getTime()
-  const oneDay = 1000 * 60 * 60 * 24
-  const day = Math.floor(diff / oneDay) + 1
-  
-  // Cap at maxDay
-  return Math.min(day, maxDay)
+// Get stamp date in format "DI 19.09.2026"
+// Day 1 = cover, Day 2 = January 1st, so we use dayNumber - 1
+function getStampDate(dayNumber: number): string {
+  const date = new Date(2026, 0, dayNumber - 1)
+  const weekday = date.toLocaleDateString('de-DE', { weekday: 'short' }).toUpperCase()
+  const dateStr = date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }).toUpperCase()
+  return `${weekday} ${dateStr}`
 }
 
-// Format date
+// Format date for display
+// Day 1 = cover, Day 2 = January 1st, so we use dayNumber - 1
 function formatDate(dayNumber: number): string {
-  if (dayNumber === 0) return 'Willkommen zum Abriss-Kalender 2026'
-  const date = new Date(2026, 0, dayNumber)
+  if (dayNumber === 1) return 'Willkommen zum Abriss-Kalender 2026'
+  const date = new Date(2026, 0, dayNumber - 1)
   return date.toLocaleDateString('de-DE', { 
     weekday: 'long', 
     year: 'numeric', 
@@ -183,8 +141,28 @@ function formatDate(dayNumber: number): string {
   })
 }
 
-// State - start at 0 for cover image
-const currentDay = ref(getDayOfYear2026())
+// Load saved position from localStorage
+function loadSavedPosition(): number {
+  if (import.meta.client) {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    return saved ? parseInt(saved, 10) : 1
+  }
+  return 1
+}
+
+// Save position to localStorage
+function savPosition(day: number) {
+  if (import.meta.client) {
+    localStorage.setItem(STORAGE_KEY, day.toString())
+  }
+}
+
+// Check if in preview mode
+const route = useRoute()
+const isPreview = computed(() => route.query.preview === 'true')
+
+// State - always start at 1, restore from localStorage if not in preview
+const currentDay = ref(isPreview.value ? 1 : loadSavedPosition())
 const dayInputValue = ref(currentDay.value)
 const tearAnimation = ref('')
 const isDragging = ref(false)
@@ -194,17 +172,16 @@ const currentSheet = ref<HTMLElement | null>(null)
 // Computed
 const formattedDate = computed(() => formatDate(currentDay.value))
 const dayData = computed(() => getDayData(currentDay.value))
-const isCover = computed(() => currentDay.value === 0)
-const displayDay = computed(() => currentDay.value === 0 ? '' : currentDay.value)
 
-// Watch currentDay to update input
+// Watch currentDay to update input and save position
 watch(currentDay, (newVal) => {
   dayInputValue.value = newVal
+  savPosition(newVal)
 })
 
 // Navigation functions
 function prevDay() {
-  if (currentDay.value > 0) {
+  if (currentDay.value > 1) {
     currentDay.value--
   }
 }
@@ -215,15 +192,15 @@ function nextDay() {
   }
 }
 
-function goToToday() {
-  currentDay.value = getDayOfYear2026()
+function goToSavedDay() {
+  currentDay.value = loadSavedPosition()
 }
 
 function goToDay() {
-  if (dayInputValue.value >= 0 && dayInputValue.value <= maxDay) {
+  if (dayInputValue.value >= 1 && dayInputValue.value <= maxDay) {
     currentDay.value = dayInputValue.value
   } else {
-    alert(`Bitte gib eine Zahl zwischen 0 und ${maxDay} ein.`)
+    alert(`Bitte gib eine Zahl zwischen 1 und ${maxDay} ein.`)
     dayInputValue.value = currentDay.value
   }
 }
@@ -251,7 +228,7 @@ function startDrag(e: MouseEvent) {
 function startDragTouch(e: TouchEvent) {
   if (currentDay.value >= maxDay) return
   isDragging.value = true
-  startY.value = e.touches[0].clientY
+  startY.value = e.touches?.[0]?.clientY ?? 0
 }
 
 function handleMouseMove(e: MouseEvent) {
@@ -268,7 +245,7 @@ function handleMouseMove(e: MouseEvent) {
 function handleTouchMove(e: TouchEvent) {
   if (!isDragging.value) return
   
-  const deltaY = e.touches[0].clientY - startY.value
+  const deltaY = (e.touches?.[0]?.clientY ?? 0) - startY.value
   
   if (deltaY > 100) {
     isDragging.value = false
@@ -284,7 +261,7 @@ function handleDragEnd() {
 function handleKeydown(e: KeyboardEvent) {
   if ((e.target as HTMLElement).tagName === 'INPUT') return
   
-  if (e.key === 'ArrowLeft' && currentDay.value > 0) {
+  if (e.key === 'ArrowLeft' && currentDay.value > 1) {
     currentDay.value--
   } else if (e.key === 'ArrowRight' && currentDay.value < maxDay) {
     currentDay.value++
