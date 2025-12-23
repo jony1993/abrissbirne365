@@ -9,25 +9,46 @@
     <div class="max-w-xl mx-auto px-4 py-8">
       
       <!-- Kalenderblatt Container -->
-      <div class="relative">
+      <div class="calendar-container relative">
         
-        <!-- Nächstes Blatt (Bild darunter) -->
+        <!-- Nächstes Blatt (sichtbar darunter) -->
         <div 
           v-if="currentDay < maxDay"
-          class="next-sheet bg-white rounded-lg shadow-lg overflow-hidden"
+          class="next-sheet-visible"
         >
-          <div class="relative w-full" style="height: 400px;">
-            <img 
-              :src="`/images/${currentDay + 1}.png`" 
-              :alt="`Bild des Tages ${currentDay + 1}`" 
-              class="w-full h-full object-cover"
-              @error="handleImageError"
-            >
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+            <!-- Next sheet header -->
+            <div class="bg-white px-4 py-4 shadow-md">
+              <h1 class="text-[18px] md:text-3xl font-black tracking-tight text-gray-900 text-center">
+                <span>REIN's</span> ABRISSKALENDER 2026
+              </h1>
+            </div>
+            <div class="border-b-2 border-dashed border-gray-300 w-full"></div>
+            <div class="relative">
+              <img 
+                :src="currentDay === 1 ? `/images/2.jpg` : `/images/${currentDay + 1}.jpg`" 
+                :alt="`Bild des Tages ${currentDay + 1}`" 
+                class="w-full h-auto"
+                @error="handleImageError"
+              >
+              <!-- Next day stamp -->
+              <div class="absolute top-4 left-4 transform -rotate-12 pointer-events-none">
+                <div class="rubber-stamp">
+                  <div class="stamp-inner">
+                    <span class="stamp-text-small">ABREISSEN AM</span>
+                    <span class="stamp-text-large">{{ getStampDate(currentDay + 1) }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Card Container -->
-        <div class="relative bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200">
+        <!-- Card Container (Current Day - on top) -->
+        <div 
+          ref="currentSheet"
+          :class="['current-sheet bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200', tearAnimation]"
+        >
           
           <!-- Fixed Header with Title (NOT part of animation) -->
           <div class="bg-white px-4 py-4 shadow-md relative z-10">
@@ -39,12 +60,7 @@
           <!-- Dashed tear line (full width) -->
           <div class="border-b-2 border-dashed border-gray-300 w-full"></div>
 
-          <!-- Animated tear-off section -->
-          <div 
-            ref="currentSheet"
-            :class="tearAnimation"
-          >
-            <!-- Image with Stamp -->
+          <!-- Image with Stamp -->
             <div class="relative">
               <!-- Cover Image -->
               <template v-if="currentDay === 1">
@@ -57,7 +73,7 @@
               <!-- Regular Day Image -->
               <template v-else>
                 <img 
-                  :src="`/images/${currentDay}.png`" 
+                  :src="`/images/${currentDay}.jpg`" 
                   :alt="`Bild des Tages ${currentDay}`" 
                   class="w-full h-auto"
                   @error="handleImageError"
@@ -99,7 +115,6 @@
                 ← Zurück
               </button>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -206,16 +221,20 @@ function goToDay() {
 }
 
 // Tear off animation
-function tearOffSheet(direction: 'down' | 'left' = 'down') {
+function tearOffSheet(direction: 'down' | 'left' | 'right' = 'left') {
   if (currentDay.value >= maxDay) return
   
-  const animationClass = direction === 'left' ? 'tear-off-left' : 'tear-off'
+  // Randomly choose left or right for variety
+  const randomDirection = Math.random() > 0.5 ? 'left' : 'right'
+  const actualDirection = direction === 'down' ? randomDirection : direction
+  
+  const animationClass = actualDirection === 'right' ? 'tear-off-right' : 'tear-off-left'
   tearAnimation.value = animationClass
   
   setTimeout(() => {
     currentDay.value++
     tearAnimation.value = ''
-  }, 800)
+  }, 700)
 }
 
 // Drag functionality

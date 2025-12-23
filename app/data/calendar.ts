@@ -9,13 +9,196 @@ export interface DayData {
 export const calendarData: Record<number, DayData> = {
   1: {
     title: 'Abriss-Kalender 2026',
-    description: '365 Tage · 365 Häuser · Eine Reise durch das Jahr'
+    description: 'Südansicht Trutzburg oder Erinnerung an meine LEGO-Zeit'
   },
   2: {
-    description: 'Tag 2 - Beschreibung hier hinzufügen.'
+    description: 'Wohn-Silo'
   },
   3: {
-    description: 'Tag 3 - Beschreibung hier hinzufügen.'
+    description: 'Wohn-Trafo'
+  },
+  4: {
+    description: 'Ach wäre ich doch Schneewittchen'
+  },
+  5: {
+    description: 'Thujen-Garde'
+  },
+  6: {
+    description: 'Für alle Ewigkeit'
+  },
+  7: {
+    description: 'Haus ohne Gesicht'
+  },
+  8: {
+    description: 'Ohne Worte'
+  },
+  9: {
+    description: 'Dachlandschaft'
+  },
+  10: {
+    description: 'Einfügung in die Nachbarbebauung am Dorfrand'
+  },
+  11: {
+    description: 'Ohne Worte'
+  },
+  12: {
+    description: 'Noch ein Wohn-Trafo'
+  },
+  13: {
+    description: 'Aus der BayWa'
+  },
+  14: {
+    description: 'Sockelschutz-Verblendung'
+  },
+  15: {
+    description: 'Hier war ein kreativer Garagist am Werk'
+  },
+  16: {
+    description: 'Neues Heizkraftwerk – Pumpen als Empfangskomitee'
+  },
+  17: {
+    description: 'Plastik-Ralleystreifen'
+  },
+  18: {
+    description: 'Meine Burgbefestigung'
+  },
+  19: {
+    description: 'Wohn-Trafo 10A'
+  },
+  20: {
+    description: 'Des Guten zuviel'
+  },
+  21: {
+    description: 'Oh wie schön ist Antrazit'
+  },
+  22: {
+    description: 'Hangbefestigung monumental'
+  },
+  23: {
+    description: 'Ohne Worte'
+  },
+  24: {
+    description: 'Ohne Worte'
+  },
+  25: {
+    description: 'Einfügung in die Nachbarbebauung'
+  },
+  26: {
+    description: 'Insektenverbotszone'
+  },
+  27: {
+    description: 'Kontrapunkt zu alten Hütten'
+  },
+  28: {
+    description: 'Kontaktverbot'
+  },
+  29: {
+    description: 'Neues Bauen in Landauf und landab'
+  },
+  30: {
+    description: 'Holzverbund-Zaun'
+  },
+  31: {
+    description: 'Liebhaber von Leitplanken'
+  },
+  32: {
+    description: 'Ohne Worte'
+  },
+  33: {
+    description: 'Barrierefreier Hang'
+  },
+  34: {
+    description: 'Bauen mit dem Gelände'
+  },
+  35: {
+    description: 'Gleiches Recht für Mandatsträger'
+  },
+  36: {
+    description: 'Leben hinter Gittern'
+  },
+  37: {
+    description: 'Ohne Worte'
+  },
+  38: {
+    description: 'Ohne Worte'
+  },
+  39: {
+    description: 'Ungeheuerlich'
+  },
+  40: {
+    description: 'Barrierefreier Hang'
+  },
+  41: {
+    description: 'Malerische Freiheit'
+  },
+  42: {
+    description: 'Malerische Freiheit'
+  },
+  43: {
+    description: 'Burg'
+  },
+  44: {
+    description: 'Bilderrätsel (Wärmepumpe, Postkasten)'
+  },
+  45: {
+    description: 'Vorgarten des Grauens'
+  },
+  46: {
+    description: 'Ohne Worte'
+  },
+  47: {
+    description: 'BayWa'
+  },
+  48: {
+    description: 'Wohn-Trafo Zwillinge'
+  },
+  49: {
+    description: 'Ohne Worte'
+  },
+  50: {
+    description: 'Lichtorgie'
+  },
+  51: {
+    description: 'Kratzbeton'
+  },
+  52: {
+    description: 'Blockbau'
+  },
+  53: {
+    description: 'Einfamilienhaus'
+  },
+  54: {
+    description: 'Kreative Dachentwässerung'
+  },
+  55: {
+    description: 'Einladend'
+  },
+  56: {
+    description: 'Mattglas'
+  },
+  57: {
+    description: 'Dorfeingang'
+  },
+  58: {
+    description: 'Ohne Worte'
+  },
+  59: {
+    description: 'Nett!'
+  },
+  60: {
+    description: 'Ohne Worte'
+  },
+  61: {
+    description: 'Ohne Worte'
+  },
+  62: {
+    description: 'Einfach wär` zu einfach'
+  },
+  63: {
+    description: 'Dörfliches Bauen'
+  },
+  64: {
+    description: 'Ohne Worte'
   },
 }
 
