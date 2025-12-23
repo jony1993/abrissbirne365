@@ -94,7 +94,7 @@
             <div class="p-6 bg-white border-t border-gray-100">
               <!-- Date Display -->
               <div class="text-center mb-6">
-                <p v-if="dayData.description" class="text-gray-600 text-sm mt-2">{{ dayData.description }}</p>
+                <p v-if="dayData.description" class="text-gray-600 text-xl mt-2">{{ dayData.description }}</p>
             </div>
 
             <!-- Abreiß-Button -->
