@@ -113,8 +113,41 @@
       <!-- Info Text -->
       <div class="text-center text-gray-400 text-sm mt-8">
         <p>365 Tage · 365 Häuser · Eine Reise durch das Jahr</p>
+        <button 
+          class="mt-2 text-gray-500 hover:text-gray-700 underline transition-colors"
+          @click="showAbout = true"
+        >
+          Über den Kalender
+        </button>
       </div>
     </div>
+
+    <!-- About Modal -->
+    <Transition name="fade">
+      <div 
+        v-if="showAbout" 
+        class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+        @click.self="showAbout = false"
+      >
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
+          <button 
+            class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            @click="showAbout = false"
+          >
+            ✕
+          </button>
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Über den Kalender</h2>
+          <div class="text-gray-600 space-y-4">
+            <p>Der Kalender gibt eine persönliche Ansicht der Bausünden der Region wieder.</p>
+            <p><strong>Das Bildmaterial stammt von folgenden Personen:</strong></p>
+            <ul class="list-disc list-inside">
+              <li><!-- Namen hier einfügen --></li>
+            </ul>
+            <p>Gerne können Sie sich unter <a href="mailto:kontakt@example.de" class="text-blue-600 hover:underline">kontakt@example.de</a> melden für Kommentare (mit Angabe des Datumblatts).</p>
+          </div>
+        </div>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -179,6 +212,7 @@ const currentSheet = ref<HTMLElement | null>(null)
 const formattedDate = computed(() => formatDate(currentDay.value))
 const dayData = computed(() => getDayData(currentDay.value))
 const showTearMessage = ref(false)
+const showAbout = ref(false)
 
 // Check if tearing is allowed (not before Jan 1st for the first calendar page)
 const canTear = computed(() => {
