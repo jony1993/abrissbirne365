@@ -87,7 +87,7 @@
               :disabled="currentDay >= maxDay"
               @click="tearOffSheet('left')"
             >
-              {{ currentDay === 1 ? '🎉 Kalender starten' : `${getStampDate(currentDay + 1)} - abreißen` }}
+              {{ currentDay === 1 ? '🎉 Kalender starten' : `${getStampDate(currentDay)}` }}
             </button>
 
             <!-- Back Button (hidden on index) -->
