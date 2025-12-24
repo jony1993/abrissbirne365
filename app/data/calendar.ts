@@ -201,7 +201,7 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   65: {
-    description: 'Ohne Worte'
+    description: '2Ohne Worte'
   },
 }
 
