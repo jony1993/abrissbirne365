@@ -89,6 +89,13 @@
             >
               {{ currentDay === 1 ? '🎉 Kalender starten' : `${getStampDate(currentDay)}` }}
             </button>
+            
+            <!-- Message when tearing not allowed -->
+            <Transition name="fade">
+              <div v-if="showTearMessage" class="mt-4 text-center text-red-500 font-medium">
+                Abreißen noch nicht möglich
+              </div>
+            </Transition>
 
             <!-- Back Button (hidden on index) -->
             <div v-if="currentDay > 1" class="mt-4 text-center">
@@ -171,6 +178,20 @@ const currentSheet = ref<HTMLElement | null>(null)
 // Computed
 const formattedDate = computed(() => formatDate(currentDay.value))
 const dayData = computed(() => getDayData(currentDay.value))
+const showTearMessage = ref(false)
+
+// Check if tearing is allowed (not before Jan 1st for the first calendar page)
+const canTear = computed(() => {
+  // Cover page (day 1) can always be torn off
+  if (currentDay.value === 1) return true
+  // For day 2 (Jan 1st), check if we're past Jan 1st 2026
+  if (currentDay.value === 2) {
+    const today = new Date()
+    const startDate = new Date(calendarYear, 0, 1) // 1. Januar 2026
+    return today >= startDate
+  }
+  return true
+})
 
 // Watch currentDay to update input and save position
 watch(currentDay, (newVal) => {
@@ -207,6 +228,12 @@ function goToDay() {
 // Tear off animation
 function tearOffSheet(direction: 'down' | 'left' | 'right' = 'left') {
   if (currentDay.value >= maxDay) return
+  
+  // Check if tearing is allowed
+  if (!canTear.value) {
+    alert('Abreißen noch nicht möglich')
+    return
+  }
   
   // Randomly choose left or right for variety
   const randomDirection = Math.random() > 0.5 ? 'left' : 'right'
@@ -297,3 +324,15 @@ onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown)
 })
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
