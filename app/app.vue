@@ -31,15 +31,7 @@
                 class="w-full h-auto"
                 @error="handleImageError"
               >
-              <!-- Next day stamp -->
-              <div class="absolute top-4 left-4 transform -rotate-12 pointer-events-none">
-                <div class="rubber-stamp">
-                  <div class="stamp-inner">
-                    <span class="stamp-text-small">ABREISSEN AM</span>
-                    <span class="stamp-text-large">{{ getStampDate(currentDay + 1) }}</span>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -78,15 +70,7 @@
                   class="w-full h-auto"
                   @error="handleImageError"
                 >
-                <!-- Rubber Stamp Overlay -->
-                <div class="absolute top-4 left-4 transform -rotate-12 pointer-events-none">
-                  <div class="rubber-stamp">
-                    <div class="stamp-inner">
-                      <span class="stamp-text-small">ABREISSEN AM</span>
-                      <span class="stamp-text-large">{{ getStampDate(currentDay) }}</span>
-                    </div>
-                  </div>
-                </div>
+
               </template>
             </div>
 
@@ -103,7 +87,7 @@
               :disabled="currentDay >= maxDay"
               @click="tearOffSheet('left')"
             >
-              {{ currentDay === 1 ? '🎉 Kalender starten' : '📅 Tag abreißen' }}
+              {{ currentDay === 1 ? '🎉 Kalender starten' : `${getStampDate(currentDay + 1)} - abreißen` }}
             </button>
 
             <!-- Back Button (hidden on index) -->
