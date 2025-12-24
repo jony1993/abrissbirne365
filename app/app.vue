@@ -20,7 +20,7 @@
             <!-- Next sheet header -->
             <div class="bg-white px-4 py-4 shadow-md">
               <h1 class="text-[18px] md:text-3xl font-black tracking-tight text-gray-900 text-center">
-                <span>REIN's</span> ABRISSKALENDER 2026
+                <span>Rein's</span> ABRISSKALENDER 2026
               </h1>
             </div>
             <div class="border-b-2 border-dashed border-gray-300 w-full"></div>
@@ -53,7 +53,7 @@
           <!-- Fixed Header with Title (NOT part of animation) -->
           <div class="bg-white px-4 py-4 shadow-md relative z-10">
             <h1 class="text-[18px] md:text-3xl font-black tracking-tight text-gray-900 text-center">
-              <span>REIN's</span> ABRISSKALENDER 2026
+              <span>Rein's</span> ABRISSKALENDER 2026
             </h1>
           </div>
           

@@ -200,6 +200,9 @@ export const calendarData: Record<number, DayData> = {
   64: {
     description: 'Ohne Worte'
   },
+  65: {
+    description: 'Ohne Worte'
+  },
 }
 
 // Helper function to get day data with fallback
