@@ -9,7 +9,7 @@ export interface DayData {
 export const calendarData: Record<number, DayData> = {
   1: {
     title: 'Abriss-Kalender 2026',
-    description: 'Südansicht Trutzburg oder Erinnerung an meine LEGO-Zeit'
+    description: 'Ein Abrisskalender für jeden Tag'
   },
   2: {
     description: 'Wohn-Silo'
@@ -93,7 +93,7 @@ export const calendarData: Record<number, DayData> = {
     description: 'Kontaktverbot'
   },
   29: {
-    description: 'Neues Bauen in Landauf und landab'
+    description: 'Neues Bauen landau(f) und landab'
   },
   30: {
     description: 'Holzverbund-Zaun'
@@ -111,7 +111,7 @@ export const calendarData: Record<number, DayData> = {
     description: 'Bauen mit dem Gelände'
   },
   35: {
-    description: 'Gleiches Recht für Mandatsträger'
+    description: 'Gleiches Geschoß-Recht für Mandatsträger'
   },
   36: {
     description: 'Leben hinter Gittern'
@@ -129,10 +129,10 @@ export const calendarData: Record<number, DayData> = {
     description: 'Barrierefreier Hang'
   },
   41: {
-    description: 'Malerische Freiheit'
+    description: 'Malerische Freiheit 1'
   },
   42: {
-    description: 'Malerische Freiheit'
+    description: 'Malerische Freiheit 2'
   },
   43: {
     description: 'Burg'
@@ -147,10 +147,10 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   47: {
-    description: 'BayWa'
+    description: 'Gott mit dir, du Land der BayWa'
   },
   48: {
-    description: 'Wohn-Trafo Zwillinge'
+    description: 'Wohn-Trafo-Zwilling'
   },
   49: {
     description: 'Ohne Worte'
@@ -162,7 +162,7 @@ export const calendarData: Record<number, DayData> = {
     description: 'Kratzbeton'
   },
   52: {
-    description: 'Blockbau'
+    description: 'Kanadischer Blockbau'
   },
   53: {
     description: 'Einfamilienhaus'
@@ -201,7 +201,7 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   65: {
-    description: '2Ohne Worte'
+    description: 'Ohne Worte'
   },
 }
 

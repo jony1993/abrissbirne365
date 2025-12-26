@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white min-h-screen">
+  <div class="bg-grey-200 min-h-screen">
     <!-- Preview Badge -->
     <div v-if="isPreview" class="text-center py-2 bg-yellow-500">
       <span class="text-white text-xs font-bold uppercase">Preview Mode</span>
@@ -45,7 +45,7 @@
           <!-- Fixed Header with Title (NOT part of animation) -->
           <div class="bg-white px-4 py-4 shadow-md relative z-10">
             <h1 class="text-[18px] md:text-3xl font-black tracking-tight text-gray-900 text-center">
-              <span>Rein's</span> ABRISSKALENDER 2026
+              <span>Rein's</span> ABRISSBIRNE 2026
             </h1>
           </div>
           
@@ -138,12 +138,16 @@
           </button>
           <h2 class="text-xl font-bold text-gray-900 mb-4">Über den Kalender</h2>
           <div class="text-gray-600 space-y-4">
-            <p>Der Kalender gibt eine persönliche Ansicht der Bausünden der Region wieder.</p>
+            <p>Der Kalender gibt meine persönliche Ansicht von Baumängeln in der näheren und weiteren Umgebung wieder.</p>
             <p><strong>Das Bildmaterial stammt von folgenden Personen:</strong></p>
-            <ul class="list-disc list-inside">
-              <li><!-- Namen hier einfügen --></li>
+            <ul>
+            <li class="list-disc list-inside">Johann Edenhofer</li>
+            <li class="list-disc list-inside">Reinhard Reif</li>
+            <li class="list-disc list-inside">Claudia Stadler</li>
             </ul>
-            <p>Gerne können Sie sich unter <a href="mailto:kontakt@example.de" class="text-blue-600 hover:underline">kontakt@example.de</a> melden für Kommentare (mit Angabe des Datumblatts).</p>
+            <p>Gerne könnt ihr Fotos kommentieren unter <a href="mailto:reinhard.reif@kabelmail.de" class="text-blue-600 hover:underline">reinhard.reif@kabelmail.de</a> (am besten mit Angabe des Datumblatts).</p>
+            <p>Ebenso würde ich mich über betitelte Fotos freuen, die noch Platz im Kalender finden sollen.</p>
+            <p>Reinhard Reif</p>
           </div>
         </div>
       </div>
