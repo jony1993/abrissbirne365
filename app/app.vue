@@ -20,7 +20,7 @@
             <!-- Next sheet header -->
             <div class="bg-white px-4 py-4 shadow-md">
               <h1 class="text-[18px] md:text-3xl font-black tracking-tight text-gray-900 text-center">
-                <span>Rein's</span> ABRISSKALENDER 2026
+                <span>Rein's</span> ABRISSBIRNE 2026
               </h1>
             </div>
             <div class="border-b-2 border-dashed border-gray-300 w-full"></div>
@@ -272,6 +272,12 @@ function tearOffSheet(direction: 'down' | 'left' | 'right' = 'left') {
     alert('Abreißen noch nicht möglich')
     return
   }
+  
+  // Play tear sound
+  const audio = new Audio('/sound.mp3')
+  audio.play().catch(() => {
+    // Ignore autoplay errors
+  })
   
   // Randomly choose left or right for variety
   const randomDirection = Math.random() > 0.5 ? 'left' : 'right'
