@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-200 min-h-screen">
+  <div class="bg-zinc-900 min-h-screen">
     <!-- Preview Badge -->
     <div v-if="isPreview" class="text-center py-2 bg-yellow-500">
       <span class="text-white text-xs font-bold uppercase">Preview Mode</span>
