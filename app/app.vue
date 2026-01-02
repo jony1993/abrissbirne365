@@ -26,8 +26,8 @@
             <div class="border-b-2 border-dashed border-gray-300 w-full"></div>
             <div class="relative">
               <img 
-                :src="`/images/${currentDay}.jpg`" 
-                :alt="`Bild des Tages ${currentDay}`" 
+                :src="`/images/${currentDay + 1}.jpg`" 
+                :alt="`Bild des Tages ${currentDay + 1}`" 
                 class="w-full h-auto"
                 @error="handleImageError"
               >
@@ -65,8 +65,8 @@
               <!-- Regular Day Image -->
               <template v-else>
                 <img 
-                  :src="`/images/${currentDay - 1}.jpg`" 
-                  :alt="`Bild des Tages ${currentDay - 1}`" 
+                  :src="`/images/${currentDay}.jpg`" 
+                  :alt="`Bild des Tages ${currentDay}`" 
                   class="w-full h-auto"
                   @error="handleImageError"
                 >
