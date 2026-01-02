@@ -218,17 +218,22 @@ const dayData = computed(() => getDayData(currentDay.value))
 const showTearMessage = ref(false)
 const showAbout = ref(false)
 
-// Check if tearing is allowed (not before Jan 1st for the first calendar page)
+// Check if tearing is allowed (only on or after the corresponding calendar date)
 const canTear = computed(() => {
   // Cover page (day 1) can always be torn off
   if (currentDay.value === 1) return true
-  // For day 2 (Jan 1st), check if we're past Jan 1st 2026
-  if (currentDay.value === 2) {
-    const today = new Date()
-    const startDate = new Date(calendarYear, 0, 1) // 1. Januar 2026
-    return today >= startDate
-  }
-  return true
+  
+  // For all other days: day 2 = Jan 1st, day 3 = Jan 2nd, etc.
+  // So the calendar date is dayNumber - 1 (0-indexed day of year)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0) // Reset to start of day
+  
+  // Calendar day corresponds to: day 2 = Jan 1st (index 0), day 3 = Jan 2nd (index 1), etc.
+  // So we need to check if today is on or after (dayNumber - 1) in the calendar year
+  const calendarDate = new Date(calendarYear, 0, currentDay.value - 1) // dayNumber - 1 gives the day of year
+  calendarDate.setHours(0, 0, 0, 0)
+  
+  return today >= calendarDate
 })
 
 // Watch currentDay to update input and save position
