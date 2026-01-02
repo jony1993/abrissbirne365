@@ -5,8 +5,25 @@
       <span class="text-white text-xs font-bold uppercase">Preview Mode</span>
     </div>
 
-    <!-- Main Content -->
-    <div class="max-w-xl mx-auto px-4 py-8">
+    <!-- Loading State until hydrated -->
+    <div v-if="!isHydrated" class="max-w-xl mx-auto px-4 py-8">
+      <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 animate-pulse">
+        <div class="bg-white px-4 py-4 shadow-md">
+          <h1 class="text-[18px] md:text-3xl font-black tracking-tight text-gray-900 text-center">
+            <span>Rein's</span> ABRISSBIRNE 2026
+          </h1>
+        </div>
+        <div class="border-b-2 border-dashed border-gray-300 w-full"></div>
+        <div class="aspect-video bg-gray-200"></div>
+        <div class="p-6 bg-white border-t border-gray-100">
+          <div class="h-6 bg-gray-200 rounded w-3/4 mx-auto mb-6"></div>
+          <div class="h-14 bg-gray-300 rounded"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content (only after hydration) -->
+    <div v-else class="max-w-xl mx-auto px-4 py-8">
       
       <!-- Kalenderblatt Container -->
       <div class="calendar-container relative">
@@ -204,8 +221,9 @@ function savPosition(day: number) {
 const route = useRoute()
 const isPreview = computed(() => route.query.preview === 'true')
 
-// State - always start at 1, restore from localStorage if not in preview
-const currentDay = ref(isPreview.value ? 1 : loadSavedPosition())
+// State - always start at 1 for SSR, restore from localStorage in onMounted
+const currentDay = ref(1)
+const isHydrated = ref(false)
 const dayInputValue = ref(currentDay.value)
 const tearAnimation = ref('')
 const isDragging = ref(false)
@@ -218,22 +236,23 @@ const dayData = computed(() => getDayData(currentDay.value))
 const showTearMessage = ref(false)
 const showAbout = ref(false)
 
-// Check if tearing is allowed (only on or after the corresponding calendar date)
+// Check if tearing is allowed (can only tear to reveal the NEXT day if today >= that next day's date)
 const canTear = computed(() => {
-  // Cover page (day 1) can always be torn off
+  // Cover page (day 1) can always be torn off to reveal day 2 (Jan 1st)
   if (currentDay.value === 1) return true
   
-  // For all other days: day 2 = Jan 1st, day 3 = Jan 2nd, etc.
-  // So the calendar date is dayNumber - 1 (0-indexed day of year)
+  // Check if we can reveal the NEXT page (currentDay + 1)
+  // Position 2 = Jan 1st, Position 3 = Jan 2nd, etc.
+  // So tearing position N reveals position N+1, which is date (N+1) - 1 = N in January
+  // e.g., tearing position 3 (Jan 2nd) reveals position 4 (Jan 3rd)
   const today = new Date()
-  today.setHours(0, 0, 0, 0) // Reset to start of day
+  today.setHours(0, 0, 0, 0)
   
-  // Calendar day corresponds to: day 2 = Jan 1st (index 0), day 3 = Jan 2nd (index 1), etc.
-  // So we need to check if today is on or after (dayNumber - 1) in the calendar year
-  const calendarDate = new Date(calendarYear, 0, currentDay.value - 1) // dayNumber - 1 gives the day of year
-  calendarDate.setHours(0, 0, 0, 0)
+  // The next day's date: position (currentDay + 1) corresponds to date (currentDay + 1 - 1) = currentDay
+  const nextDayDate = new Date(calendarYear, 0, currentDay.value) // This is the date of the page being revealed
+  nextDayDate.setHours(0, 0, 0, 0)
   
-  return today >= calendarDate
+  return today >= nextDayDate
 })
 
 // Watch currentDay to update input and save position
@@ -250,7 +269,7 @@ function prevDay() {
 }
 
 function nextDay() {
-  if (currentDay.value < maxDay) {
+  if (currentDay.value < maxDay && canTear.value) {
     currentDay.value++
   }
 }
@@ -342,7 +361,7 @@ function handleKeydown(e: KeyboardEvent) {
   
   if (e.key === 'ArrowLeft' && currentDay.value > 1) {
     currentDay.value--
-  } else if (e.key === 'ArrowRight' && currentDay.value < maxDay) {
+  } else if (e.key === 'ArrowRight' && currentDay.value < maxDay && canTear.value) {
     currentDay.value++
   } else if (e.key === ' ' || e.key === 'Enter') {
     e.preventDefault()
@@ -365,6 +384,7 @@ onMounted(() => {
       currentDay.value = parseInt(saved, 10)
     }
   }
+  isHydrated.value = true
   
   document.addEventListener('mousemove', handleMouseMove)
   document.addEventListener('mouseup', handleDragEnd)
