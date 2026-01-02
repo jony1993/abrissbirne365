@@ -358,6 +358,14 @@ function handleImageError(e: Event) {
 
 // Lifecycle
 onMounted(() => {
+  // Restore saved position from localStorage on client
+  if (!isPreview.value) {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      currentDay.value = parseInt(saved, 10)
+    }
+  }
+  
   document.addEventListener('mousemove', handleMouseMove)
   document.addEventListener('mouseup', handleDragEnd)
   document.addEventListener('touchmove', handleTouchMove)
