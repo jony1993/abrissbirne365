@@ -201,9 +201,85 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   65: {
+    description: 'Stabil – man kann ja nie wissen'
+  },
+  66: {
+    description: 'Neues Bauen im kleinen Bauerndorf – Vielleicht doch ein Austragshaus?'
+  }, 
+  67: {
+    description: 'Gute Nachbarschaft'
+  },
+  68: {
+    description: 'Manchmal kann Sinnvolles auch ein Zuviel sein'
+  },
+  69: {
+    description: '„Er spielte früher schon gern mit der Playmobil-Burg!“'
+  }, 
+  70: {
+    description: 'Es gibt immer noch eine Steigerung.'
+  },
+  71: {
+    description: 'Gabionitis'
+  },
+  72: {
+    description: 'Aufsteigender Granit'
+  }, 
+  73: {
+    description: 'Ganz im Goldenen Schnitt'
+  },
+  74: {
+    description: 'Innen- oder besser Renditeverdichtung'
+  }, 
+  75: {
+    description: 'Vorbildliches Bauen in steilem Gelände'
+  },
+  76: {
+    description: 'Freisitz-Schlucht'
+  },
+  77: {
+    description: 'Neues Bauen am alten Feuerwehrturm'
+  }, 
+  78: {
+    description: 'Spenglerarbeit - Meisterstück'
+  },
+  79: {
+    description: 'Schwebende Ästhetik'
+  },
+  80: {
+    description: '„Jeder soll bauen wie er will!“ – Anschauen müssen es aber alle!'
+  }, 
+  81: {
+    description: 'Großkopferd'
+  },
+  82: {
+    description: 'Ohne Worte'
+  }, 
+  83: {
+    description: 'In der Ruhe liegt die Kraft.'
+  },
+  84: {
+    description: 'Schwarz-Rot-Geld'
+  }, 
+  85: {
     description: 'Ohne Worte'
   },
-}
+  86: {
+    description: 'Hier bin ich!'
+  },
+  87: {
+    description: 'Vorbildliche Südfassade'
+  }, 
+  88: {
+    description: 'Bugalow in Pirschhaltung'
+  },
+  89: {
+    description: 'Ohne Worte'
+  },
+  90: {
+    description: 'Zeitgeschmack'
+  },
+  }
+
 
 // Helper function to get day data with fallback
 export function getDayData(day: number): DayData {
