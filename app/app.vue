@@ -241,6 +241,9 @@ const showAbout = ref(false)
 
 // Check if tearing is allowed (can only tear to reveal the NEXT day if today >= that next day's date)
 const canTear = computed(() => {
+  // Preview mode bypasses date restrictions
+  if (isPreview.value) return true
+  
   // Cover page (day 1) can always be torn off to reveal day 2 (Jan 1st)
   if (currentDay.value === 1) return true
   
@@ -380,8 +383,15 @@ function handleImageError(e: Event) {
 
 // Lifecycle
 onMounted(() => {
-  // Restore saved position from localStorage on client
-  if (!isPreview.value) {
+  // Jump to specific day via ?day= query parameter
+  const dayParam = route.query.day
+  if (dayParam) {
+    const targetDay = parseInt(dayParam as string, 10)
+    if (targetDay >= 1 && targetDay <= maxDay) {
+      currentDay.value = targetDay
+    }
+  } else if (!isPreview.value) {
+    // Restore saved position from localStorage on client
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) {
       currentDay.value = parseInt(saved, 10)
