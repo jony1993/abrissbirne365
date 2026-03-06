@@ -114,13 +114,24 @@
               </div>
             </Transition>
 
-            <!-- Back Button (hidden on index) -->
-            <div v-if="currentDay > 1" class="mt-4 text-center">
+            <!-- Navigation Row -->
+            <div class="mt-4 flex items-center" :class="currentDay > 1 ? 'justify-between' : 'justify-end'">
+              <!-- Back Button (left) -->
               <button 
+                v-if="currentDay > 1"
                 class="text-gray-500 hover:text-gray-900 transition-colors text-sm"
                 @click="prevDay"
               >
                 ← Zurück
+              </button>
+
+              <!-- Jump to Today (right) -->
+              <button 
+                v-if="showJumpButton"
+                class="text-gray-500 hover:text-gray-900 transition-colors text-sm"
+                @click="jumpToToday"
+              >
+                Zum aktuellen Tag →
               </button>
             </div>
           </div>
@@ -260,6 +271,31 @@ const canTear = computed(() => {
   
   return today >= nextDayDate
 })
+
+// Calculate which calendar day corresponds to today
+const todayCalendarDay = computed(() => {
+  const now = new Date()
+  const startOfYear = new Date(calendarYear, 0, 1)
+  now.setHours(0, 0, 0, 0)
+  startOfYear.setHours(0, 0, 0, 0)
+  
+  // Before the calendar year starts
+  if (now < startOfYear) return 1
+  
+  const diffDays = Math.floor((now.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24))
+  // Day 1 = cover, Day 2 = Jan 1st, so today = diffDays + 2
+  return Math.min(diffDays + 2, maxDay)
+})
+
+// Show the jump button when user is significantly behind the current date
+const showJumpButton = computed(() => {
+  return todayCalendarDay.value > 2 && currentDay.value < todayCalendarDay.value
+})
+
+// Jump to today's calendar day
+function jumpToToday() {
+  currentDay.value = todayCalendarDay.value
+}
 
 // Watch currentDay to update input and save position
 watch(currentDay, (newVal) => {
