@@ -205,7 +205,7 @@ export const calendarData: Record<number, DayData> = {
   },
   66: {
     description: 'Neues Bauen im kleinen Bauerndorf – Vielleicht doch ein Austragshaus?'
-  }, 
+  },
   67: {
     description: 'Gute Nachbarschaft'
   },
@@ -213,8 +213,8 @@ export const calendarData: Record<number, DayData> = {
     description: 'Manchmal kann Sinnvolles auch ein Zuviel sein'
   },
   69: {
-    description: '„Er spielte früher schon gern mit der Playmobil-Burg!“'
-  }, 
+    description: '„Er spielte früher schon gern mit der Playmobil-Burg!"'
+  },
   70: {
     description: 'Es gibt immer noch eine Steigerung.'
   },
@@ -223,13 +223,13 @@ export const calendarData: Record<number, DayData> = {
   },
   72: {
     description: 'Aufsteigender Granit'
-  }, 
+  },
   73: {
     description: 'Ganz im Goldenen Schnitt'
   },
   74: {
     description: 'Innen- oder besser Renditeverdichtung'
-  }, 
+  },
   75: {
     description: 'Vorbildliches Bauen in steilem Gelände'
   },
@@ -238,7 +238,7 @@ export const calendarData: Record<number, DayData> = {
   },
   77: {
     description: 'Neues Bauen am alten Feuerwehrturm'
-  }, 
+  },
   78: {
     description: 'Spenglerarbeit - Meisterstück'
   },
@@ -246,20 +246,20 @@ export const calendarData: Record<number, DayData> = {
     description: 'Schwebende Ästhetik'
   },
   80: {
-    description: '„Jeder soll bauen wie er will!“ – Anschauen müssen es aber alle!'
-  }, 
+    description: '„Jeder soll bauen wie er will!" – Anschauen müssen es aber alle!'
+  },
   81: {
     description: 'Großkopferd'
   },
   82: {
     description: 'Ohne Worte'
-  }, 
+  },
   83: {
     description: 'In der Ruhe liegt die Kraft.'
   },
   84: {
     description: 'Schwarz-Rot-Geld'
-  }, 
+  },
   85: {
     description: 'Ohne Worte'
   },
@@ -268,7 +268,7 @@ export const calendarData: Record<number, DayData> = {
   },
   87: {
     description: 'Vorbildliche Südfassade'
-  }, 
+  },
   88: {
     description: 'Bugalow in Pirschhaltung'
   },
@@ -283,7 +283,7 @@ export const calendarData: Record<number, DayData> = {
   },
   92: {
     description: 'In der Ruhe liegt die Kraft'
-  }, 
+  },
   93: {
     description: 'Abwehrend statt einladend'
   },
@@ -292,7 +292,7 @@ export const calendarData: Record<number, DayData> = {
   },
   95: {
     description: 'Gleichgewicht des Schreckens'
-  }, 
+  },
   96: {
     description: 'Dorfrand'
   },
@@ -305,6 +305,8 @@ export const calendarData: Record<number, DayData> = {
   99: {
     description: 'Des Deutschen (zweit-)liebstes Kind'
   },
+}
+
 // Helper function to get day data with fallback
 export function getDayData(day: number): DayData {
   return calendarData[day] || {
