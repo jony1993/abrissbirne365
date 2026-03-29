@@ -278,9 +278,33 @@ export const calendarData: Record<number, DayData> = {
   90: {
     description: 'Zeitgeschmack'
   },
-  }
-
-
+  91: {
+    description: 'Ohne Worte'
+  },
+  92: {
+    description: 'In der Ruhe liegt die Kraft'
+  }, 
+  93: {
+    description: 'Abwehrend statt einladend'
+  },
+  94: {
+    description: 'Bei der Firsteinschneidung verrechnet'
+  },
+  95: {
+    description: 'Gleichgewicht des Schreckens'
+  }, 
+  96: {
+    description: 'Dorfrand'
+  },
+  97: {
+    description: 'Ohne Worte'
+  },
+  98: {
+    description: 'Ohne Worte'
+  },
+  99: {
+    description: 'Des Deutschen (zweit-)liebstes Kind'
+  },
 // Helper function to get day data with fallback
 export function getDayData(day: number): DayData {
   return calendarData[day] || {
