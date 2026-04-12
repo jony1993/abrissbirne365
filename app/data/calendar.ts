@@ -316,7 +316,35 @@ export const calendarData: Record<number, DayData> = {
   },
   103: {
     description: 'Architekten-Haus besser Architekten-Graus'
-  }, 
+  },
+  104: {
+    description: 'Die Phantasie kennt keine Grenzen'
+  },
+  105: {
+    description: 'Nicht schön und ohne jedes Grün'
+  },
+  106: {
+    description: 'Ohne Worte'
+  },
+  107: {
+    description: 'Ohne Worte'
+  },
+  108: {
+    description: 'Vielleicht modernes Fachwerk?'
+  },
+  109: {
+    description: 'Ein lauschiger Sitzplatz'
+  },
+  110: {
+    description: 'Vermutlich FKK-Gelände'
+  },
+  111: {
+    description: 'Ohne Worte'
+  },
+  112: {
+    description: 'Fassadenbegrünung'
+  },
+    
 }
 
 // Helper function to get day data with fallback
