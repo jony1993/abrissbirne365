@@ -344,7 +344,40 @@ export const calendarData: Record<number, DayData> = {
   112: {
     description: 'Fassadenbegrünung'
   },
-    
+  113: {
+    description: 'Ein Traum'
+  },
+  114: {
+    description: 'Hoffnung auf Abriss'
+  },
+  115: {
+    description: 'Wehr-Garage'
+  },
+  116: {
+    description: 'Ohne Worte'
+  },
+  117: {
+    description: 'Dorfrand Wolfsdorf oder möglich ist alles'
+  },
+  118: {
+    description: 'Ohne Worte'
+  },
+  119: {
+    description: 'Ohne Worte'
+  },
+  120: {
+    description: 'Es gibt immer wieder Steigerungen'
+  },
+  121: {
+    description: 'Fenster, die Augen des Hauses'
+  },
+  122: {
+    description: 'Renovierungsversuch'
+  },
+  123: {
+    description: 'Balkonbiwak'
+  },
+
 }
 
 // Helper function to get day data with fallback
