@@ -377,7 +377,16 @@ export const calendarData: Record<number, DayData> = {
   123: {
     description: 'Balkonbiwak'
   },
-
+  124: {
+    description: 'Peinliche Versuche, es anders zu machen'
+  },
+  125: {
+    description: 'Ohne Worte'
+  },
+  126: {
+    description: 'Söder: "Bayern ist Europas Tor zum All."'
+  },
+  
 }
 
 // Helper function to get day data with fallback
