@@ -386,6 +386,57 @@ export const calendarData: Record<number, DayData> = {
   126: {
     description: 'Söder: "Bayern ist Europas Tor zum All."'
   },
+  127: {
+    description: 'Was als Mauereinfriedung begann, endete als Stall mit PV in Gierstellung'
+  },
+  128: {
+    description: 'Haustyp „Lamelle“'
+  },
+  129: {
+    description: 'Bungalow, ach nein nur Garage'
+  },
+  130: {
+    description: 'Neues Ghetto'
+  },
+  131: {
+    description: 'Ohne Worte'
+  },
+  132: {
+    description: 'Begegnungsschutz'
+  },
+  133: {
+    description: 'Buchsige Schotterkunst'
+  },
+  134: {
+    description: 'Phantasie kennt keine Grenzen (Pergonitis)'
+  },
+  135: {
+    description: 'Warum nicht gleich als Schiebe-Läden'
+  },
+  136: {
+    description: 'Ohne Worte'
+  },
+  137: {
+    description: 'Gleiches Baurecht für alle'
+  },
+  138: {
+    description: 'Ohne Worte'
+  },
+  139: {
+    description: 'Ohne Worte'
+  },
+  140: {
+    description: 'Karibik trifft Pergonien'
+  },
+  141: {
+    description: 'Ohne Worte'
+  },
+  142: {
+    description: 'Ohne Worte'
+  },
+  143: {
+    description: 'Sichtschutz-Massivmauer zur Pool-Abschirmung'
+  },
   
 }
 
