@@ -437,7 +437,51 @@ export const calendarData: Record<number, DayData> = {
   143: {
     description: 'Sichtschutz-Massivmauer zur Pool-Abschirmung'
   },
-  
+  144: {
+    description: 'Sogar der Hauskater ist anthrazit'
+  },
+  145: {
+    description: 'Ohne Worte'
+  },
+  146: {
+    description: 'Architektenleistung?'
+  },
+  147: {
+    description: 'Ohne Worte'
+  },
+  148: {
+    description: 'Für Ästheten'
+  },
+  149: {
+    description: 'Für Geometer'
+  },
+  150: {
+    description: 'Einladend'
+  151: {
+    description: 'Ohne Worte und Hausecke'
+  },
+  152: {
+    description: 'Austragshaus?'
+  },
+  153: {
+    description: 'Ohne Worte'
+  },
+  154: {
+    description: 'Zeitlose Ästhetik'
+  },
+  155: {
+    description: 'Balkonien'
+  },
+  156: {
+    description: 'Kunst am (Zaun-)Bau'
+  },
+  157: {
+    description: 'Vorbildlich'
+  },
+  158: {
+    description: 'Ohne Worte'
+  },
+
 }
 
 // Helper function to get day data with fallback
