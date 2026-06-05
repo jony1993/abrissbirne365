@@ -482,6 +482,39 @@ export const calendarData: Record<number, DayData> = {
   158: {
     description: 'Ohne Worte'
   },
+  159: {
+    description: 'Ohne Worte bzw. Fenster'
+  },
+  160: {
+    description: 'Ohne Worte'
+  },
+  161: {
+    description: 'Taubenschutz?'
+  },  
+  162: {
+    description: 'Vermutlich pastoraler Ruhesitz'
+  },
+  163: {
+    description: 'Ohne Worte'
+  },
+  164: {
+    description: 'Bauamt vorübergehend nicht besetzt'
+  },
+  165: {
+    description: 'Mit Liebe zum Detail'
+  },
+  166: {
+    description: 'Ohne Worte'
+  },
+  167: {
+    description: 'In der Ruhe liegt die Kraft'
+  },
+  168: {
+    description: 'Dorfrand'
+  },
+  169: {
+    description: 'Ohne Worte'
+  },
 
 }
 
