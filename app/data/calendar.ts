@@ -540,12 +540,45 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   178: {
-    description: 'Ohne Worte'
+    description: 'Haus harmoniert mit Vorplatz'
   },
   179: {
+    description: 'Eine Gaube geht immer'
+  },
+  180: {
+    description: 'Außenerschließung (1)'
+  },
+  181: {
     description: 'Ohne Worte'
   },
-  
+  182: {
+    description: 'Modern Art (Schuhkarton) (1)'
+  },  
+  183: {
+    description: 'Wohnraumverdichtung a la Landau'
+  },
+  184: {
+    description: 'Einfamilienhaus'
+  },
+  185: {
+    description: 'Außenerschließung (2)'
+  },
+  186: {
+    description: 'Modern Art (Schuhkarton) (2)'
+  },
+  187: {
+    description: 'Giebelfassade – wie aus dem Lehrbuch der Disharmonie'
+  },
+  188: {
+    description: 'Hauptsache Balkon'
+  },
+  189: {
+    description: 'Schau mir nichts weg!'
+  },
+  190: {
+    description: 'Ohne Worte'
+  },
+
 }
 
 // Helper function to get day data with fallback
