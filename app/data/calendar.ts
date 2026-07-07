@@ -576,6 +576,54 @@ export const calendarData: Record<number, DayData> = {
     description: 'Schau mir nichts weg!'
   },
   190: {
+    description: 'Haustyp "Studentensilo"'
+  },
+  191: {
+    description: 'Haustyp „Legehenne“'
+  },
+  192: {
+    description: 'Monokultur im Vordergrund und Hintergrund'
+  },
+  193: {
+    description: 'Vermutlich renoviertes Reststück der Berliner Mauer'
+  },
+  194: {
+    description: 'Haustyp „Holzfäller“'
+  },
+  195: {
+    description: 'Gestalterische Anpassung'
+  },
+  196: {
+    description: 'Da neigt sogar die Kamera zur Unschärfe'
+  },
+  197: {
+    description: 'Ohne Worte'
+  },
+  198: {
+    description: 'Zwei „korrespondierende“ Brunnen in grauem Umfeld'
+  },  
+  199: {
+    description: 'Ohne Worte'
+  },
+  200: {
+    description: 'Ohne Worte'
+  },
+  201: {
+    description: 'Tatsächlich ein Wohnhaus'
+  },
+  202: {
+    description: 'Glasversicherung?'
+  },
+  203: {
+    description: 'Grundstück ist gerade noch breit genug – für`s Schiebetor'
+  },
+  204: {
+    description: 'Ohne Worte'
+  },
+  205: {
+    description: 'Bauklötzchen-Architektur'
+  },
+  206: {
     description: 'Ohne Worte'
   },
 
