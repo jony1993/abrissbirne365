@@ -624,9 +624,78 @@ export const calendarData: Record<number, DayData> = {
     description: 'Bauklötzchen-Architektur'
   },
   206: {
+    description: 'Mir fehlen die Worte'
+  },
+  207: {
+    description: 'Französische Balkone“'
+  },
+  208: {
+    description: 'Baucontainer'
+  },
+  209: {
     description: 'Ohne Worte'
   },
-
+  210: {
+    description: 'Kreativität am Buswartehäuschen'
+  },
+  211: {
+    description: 'Landauf – Landab – Landau (nein: Straubing)'
+  },  
+  212: {
+    description: 'Ohne Worte'
+  },
+  213: {
+    description: 'Ohne Worte'
+  },
+  214: {
+    description: 'Ohne Worte'
+  },
+  215: {
+    description: 'Wie ein unpassender Hut'
+  },
+  216: {
+    description: 'Man sollte nüchtern heimkommen'
+  },
+  217: {
+    description: 'Auch schon egal (1)'
+  },
+  218: {
+    description: 'Der langfristige Reiz der Thujenhecke'
+  },
+  219: {
+    description: 'Traurig, aber da'
+  },
+  220: {
+    description: 'Leicht im Grünton vergriffen'
+  },
+  221: {
+    description: 'Gefällig auch in steilem Gelände'
+  },  
+  222: {
+    description: 'Auch schon egal (2)'
+  },
+  223: {
+    description: 'Ohne Worte'
+  },
+  224: {
+    description: 'Festungsbau der 2000er Jahre'
+  },
+  225: {
+    description: 'Kreative Zaunsäulen'
+  },
+  226: {
+    description: 'Neubau für große Schrankwände'
+  },
+  227: {
+    description: 'Fassadenbegrünung – peinlicher Versuch'
+  },
+  228: {
+    description: 'Ohne Worte'
+  },
+  229: {
+    description: 'Ohne Worte'
+  }, 
+   
 }
 
 // Helper function to get day data with fallback
