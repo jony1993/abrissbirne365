@@ -690,7 +690,7 @@ export const calendarData: Record<number, DayData> = {
     description: 'Fassadenbegrünung – peinlicher Versuch'
   },
   228: {
-    description: 'Ohne Worte'
+    description: 'Edelengobe im Wettstreit mit der gemeinen Thuje'
   },
   229: {
     description: 'Ohne Worte'
