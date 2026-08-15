@@ -693,6 +693,54 @@ export const calendarData: Record<number, DayData> = {
     description: 'Edelengobe im Wettstreit mit der gemeinen Thuje'
   },
   229: {
+    description: 'Schotteritis'
+  },
+  230: {
+    description: '„Miet mich !!!“ lieber nicht'
+  },
+  231: {
+    description: 'Wo wird das Treppenhaus sein? (I)'
+  },  
+  232: {
+    description: 'Wo wird das Treppenhaus sein? (II)'
+  },
+  233: {
+    description: 'Ortsabrundung Landau-Oberframmering'
+  },
+  234: {
+    description: '„Einfügung in die vorhandene Umgebungsbebauung“ (Quelle: STMB)'
+  },
+  235: {
+    description: 'Ohne Worte'
+  },
+  236: {
+    description: 'Ohne Worte'
+  },
+  237: {
+    description: 'Grau in grau'
+  },
+  238: {
+    description: 'SZ'
+  },
+  239: {
+    description: 'Wohnsilo mit Zwangsbelüftung und hohem Gestaltungsanspruch'
+  },
+  240: {
+    description: 'Der Postillon'
+  },
+  241: {
+    description: 'Gefällig auch in steilem Gelände'
+  },  
+  242: {
+    description: 'Anpassung an Klimawandel (vermutlich mit Butler und Zofe)'
+  },
+  243: {
+    description: 'Ohne Worte'
+  },
+  244: {
+    description: 'Ohne Worte'
+  },
+  245: {
     description: 'Ohne Worte'
   }, 
    
