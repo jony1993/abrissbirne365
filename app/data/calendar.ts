@@ -729,10 +729,10 @@ export const calendarData: Record<number, DayData> = {
     description: 'Der Postillon'
   },
   241: {
-    description: 'Gefällig auch in steilem Gelände'
+    description: 'Anpassung an Klimawandel (vermutlich mit Butler und Zofe)'
   },  
   242: {
-    description: 'Anpassung an Klimawandel (vermutlich mit Butler und Zofe)'
+    description: 'Ohne Worte'
   },
   243: {
     description: 'Ohne Worte'
