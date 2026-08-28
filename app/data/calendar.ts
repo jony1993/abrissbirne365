@@ -797,9 +797,6 @@ export const calendarData: Record<number, DayData> = {
   263: {
     description: 'Ohne Worte'
   },
-  264: {
-    description: 'Ohne Worte'
-  },  
 
 }
 
