@@ -738,12 +738,69 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   244: {
-    description: 'Ohne Worte'
+    description: 'Vorflächengestaltung'
   },
   245: {
-    description: 'Ohne Worte'
+    description: 'Vermutlich: Inspiration durch Verkehrsschilder'
   }, 
-   
+  246: {
+    description: 'Champignon-Siedlung'
+  },
+  247: {
+    description: 'Ausladend'
+  },
+  248: {
+    description: 'Gesims nach klassischem Vorbild'
+  },
+  249: {
+    description: 'Vermutlicher Planungsfehler: Sofa-Garnitur passt nicht mehr'
+  },
+  250: {
+    description: 'Ohne Worte'
+  },  
+  251: {
+    description: 'Bauernhaus mit Edelengobe'
+  },
+  252: {
+    description: 'Alles in Reih und Glied – Vielleicht ist Eigentümer bei der Bundeswehr'
+  },
+  253: {
+    description: 'Kubische Austragshaus-Erweiterung mit interessanter Gaube'
+  },
+  254: {
+    description: 'Wie man sofort vermutet, war hier früher mal eine Hofstelle'
+  },
+  255: {
+    description: 'Grenzfälle regenerativer Energien (I)'
+  },
+  256: {
+    description: 'Manchmal wird`s peinlich'
+  },
+  257: {
+    description: 'Die kleine Bolderwand rechts stört das stimmige Werk'
+  },
+  258: {
+    description: 'Grenzfälle regenerativer Energien (II)'
+  },
+  259: {
+    description: 'Lieber ohne Worte'
+  },
+  260: {
+    description: 'Gäuboden'
+  },  
+  261: {
+    description: 'Ohne Worte'
+  },
+  262: {
+    description: 'Ohne Worte'
+  },
+  263: {
+    description: 'Ohne Worte'
+  },
+  264: {
+    description: 'Ohne Worte'
+  },  
+
 }
 
 // Helper function to get day data with fallback
