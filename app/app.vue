@@ -179,6 +179,7 @@
             <li class="list-disc list-inside">Helena Edenhofer</li>
             <li class="list-disc list-inside">Lukas Reif</li>
             <li class="list-disc list-inside">Franz Meindl</li>
+            <li class="list-disc list-inside">Jonas Reif</li>
             </ul>
             <p>Gerne könnt ihr Fotos kommentieren unter <a href="mailto:reinhard.reif@kabelmail.de" class="text-blue-600 hover:underline">reinhard.reif@kabelmail.de</a> (am besten mit Angabe des Datumblatts).</p>
             <p>Ebenso würde ich mich über betitelte Fotos freuen, die noch Platz im Kalender finden sollen.</p>
