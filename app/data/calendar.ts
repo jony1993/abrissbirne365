@@ -792,12 +792,42 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   262: {
-    description: 'Ohne Worte'
+    description: 'Grenzfälle regenerativer Energien (III)'
   },
   263: {
+    description: 'Oh wie schön sind Thujahecken'
+  },
+  264: {
+    description: 'Betriebsleiterwohnung in edler Alleinlage'
+  },
+  265: {
+    description: '„Einfügung in die vorhandene Umgebungsbebauung“ (Quelle: STMB)'
+  },
+  266: {
     description: 'Ohne Worte'
   },
-
+  267: {
+    description: 'So kann man „Zimmer mit Balkon“ anbieten'
+  },
+  268: {
+    description: 'Hier fehlen mir die Worte (I)'
+  },
+  269: {
+    description: 'Siedlungsbrei in Grau'
+  },
+  270: {
+    description: 'Hier fehlen mir die Worte (II)'
+  },  
+  271: {
+    description: 'Ohne Worte'
+  },
+  272: {
+    description: 'Ohne Worte'
+  },
+  273: {
+    description: 'Ohne Worte'
+  },
+  
 }
 
 // Helper function to get day data with fallback
