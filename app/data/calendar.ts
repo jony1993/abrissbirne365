@@ -825,8 +825,71 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },
   273: {
+    description: 'Festung'
+  },
+  274: {
+    description: 'Hauptsache modern (I)'
+  },
+  275: {
+    description: 'Hauptsache modern (II)'
+  },
+  276: {
+    description: 'Chaotische Fensterordnung'
+  },
+  277: {
+    description: 'Gartenvollüberdachung'
+  },
+  278: {
+    description: 'Privater Parkschutz auf öffentlichen Flächen'
+  },
+  279: {
+    description: 'Öffentliche Fläche – nur wasserdurchlässige Beläge erlaubt'
+  },
+  280: {
+    description: 'Bebauungsplan: Klare Bauformen'
+  },
+  281: {
+    description: 'Hier bahnt sich die nächste Bausünde den Weg'
+  },  
+  282: {
+    description: 'Schotteritis'
+  },
+  283: {
+    description: 'Na ja!'
+  },
+  284: {
+    description: 'Einfamilienhaus - man gönnt sich'
+  },
+  285: {
+    description: 'Beim Zaun ging das Geld aus'
+  },
+  286: {
+    description: '„Brechreiz'
+  },
+  287: {
+    description: 'Schuhschachtelarchitektur'
+  },
+  288: {
+    description: 'Pilzhaus im Schotter'
+  },
+  289: {
     description: 'Ohne Worte'
   },
+  290: {
+    description: 'Ohne Worte'
+  },
+  291: {
+    description: 'Bayerwaldarchitektur'
+  },  
+  292: {
+    description: 'Ohne Worte'
+  },
+  293: {
+    description: 'Ohne Worte'
+  },
+  294: {
+    description: 'Ohne Worte'
+  },   
   
 }
 
