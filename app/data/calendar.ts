@@ -882,12 +882,27 @@ export const calendarData: Record<number, DayData> = {
     description: 'Bayerwaldarchitektur'
   },  
   292: {
-    description: 'Ohne Worte'
+    description: 'Bayerwaldarchitektur'
   },
   293: {
-    description: 'Ohne Worte'
+    description: 'Ortsradpilz nimmt Form an'
   },
   294: {
+    description: 'Wird spannend'
+  },   
+  295: {
+    description: 'Steigerungen sind immer möglich'
+  },
+  296: {
+    description: 'Ohne Worte'
+  },  
+  297: {
+    description: 'Ohne Worte'
+  },
+  298: {
+    description: 'Ohne Worte'
+  },
+  299: {
     description: 'Ohne Worte'
   },   
   
