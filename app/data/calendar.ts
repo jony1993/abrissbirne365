@@ -897,12 +897,30 @@ export const calendarData: Record<number, DayData> = {
     description: 'Ohne Worte'
   },  
   297: {
-    description: 'Ohne Worte'
+    description: 'Selbstredend'
   },
   298: {
-    description: 'Ohne Worte'
+    description: 'Phantasievoll'
   },
   299: {
+    description: 'Geländeangepasst'
+  },   
+  300: {
+    description: 'Holz heilt viel, aber nicht alles'
+  },   
+  301: {
+    description: '400 m Polypropylen'
+  },
+  302: {
+    description: 'Villa-Ritis'
+  },  
+  303: {
+    description: 'Ohne Worte'
+  },
+  304: {
+    description: 'Rechts mit – links ohne Gesicht'
+  },
+  305: {
     description: 'Ohne Worte'
   },   
   
