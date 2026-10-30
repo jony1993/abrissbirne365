@@ -921,6 +921,36 @@ export const calendarData: Record<number, DayData> = {
     description: 'Rechts mit – links ohne Gesicht'
   },
   305: {
+    description: 'Kabinett der Grausamkeiten'
+  },
+  306: {
+    description: 'Gastfreundlich'
+  },  
+  307: {
+    description: 'Modernes Bauen – ein Genuss für`s Auge'
+  },
+  308: {
+    description: 'Vorbildlich begrünt'
+  },
+  309: {
+    description: 'Ohne Worte'
+  },   
+  310: {
+    description: 'Harakiri-Schlitze'
+  },   
+  311: {
+    description: 'Kreative Böschungsgestaltung'
+  },
+  312: {
+    description: 'Kleine Dachterrasse'
+  },  
+  313: {
+    description: 'Haus auf Haus oder die Kunst der Abstandsflächen'
+  },
+  314: {
+    description: 'Einfach nur schön'
+  },
+  315: {
     description: 'Ohne Worte'
   },   
   
