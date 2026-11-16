@@ -969,12 +969,53 @@ export const calendarData: Record<number, DayData> = {
     description: 'Milchglas-ohne-Sinn-Zaun'
   },
   321: {
-    description: 'Ohne Worte'
+    description: 'FKK-Gelände'
   },
   322: {
+    description: 'Es ist vollbracht'
+  },
+  323: {
+    description: 'Schön geschmacklos'
+  },   
+  324: {
+    description: 'Ohne Worte'
+  },   
+  325: {
+    description: 'Ehrwürdiger Platz'
+  },
+  326: {
+    description: 'Landidyll'
+  },  
+  327: {
     description: 'Ohne Worte'
   },
-     
+  328: {
+    description: 'Autoschlafzimmer'
+  },
+  329: {
+    description: 'Öffnungsarrangement'
+  },   
+  330: {
+    description: 'Ohne Worte'
+  },   
+  331: {
+    description: 'Ohne Worte'
+  },   
+  332: {
+    description: 'Ohne Worte'
+  },
+  333: {
+    description: 'Ohne Worte'
+  },  
+  334: {
+    description: 'Ohne Worte'
+  },
+  335: {
+    description: 'Ohne Worte'
+  },
+  336: {
+    description: 'Ohne Worte'
+  },    
 }
 
 // Helper function to get day data with fallback
